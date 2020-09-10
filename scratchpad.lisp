@@ -35,18 +35,18 @@
       (remove-split moved-from-group))))
 
 (defun resize-by-gravity (window gravity ratio)
-  (let* ((screen (current-screen))
-         (screen-x (stumpwm::screen-x screen))
-         (screen-y (stumpwm::screen-y screen))
-         (screen-width (stumpwm::screen-width screen))
-         (screen-height (stumpwm::screen-height screen))
+  (let* ((head (current-head))
+         (head-x (stumpwm::head-x head))
+         (head-y (stumpwm::head-y head))
+         (head-width (stumpwm::head-width head))
+         (head-height (stumpwm::head-height head))
 
-         (x-min screen-x)
-         (x-max (- (+ screen-x screen-width)
+         (x-min head-x)
+         (x-max (- (+ head-x head-width)
                    (* 2 stumpwm::*float-window-border*)))
 
-         (y-min screen-y)
-         (y-max (- (+ screen-y screen-height)
+         (y-min head-y)
+         (y-max (- (+ head-y head-height)
                    stumpwm::*float-window-title-height*
                    stumpwm::*float-window-border*))
 
